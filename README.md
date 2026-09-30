@@ -33,7 +33,7 @@ Projeto de estudo/portfólio, desenvolvido a partir de um pedido real de cliente
 ## Como rodar o projeto
 
 \`\`\`bash
-git clone <link-do-seu-repositório>
+git clone <https://github.com/noahsvieira/API-de-recargas-e-pagamento-de-contas-com-Asaas>
 cd api-recargas
 python -m venv .venv
 .venv\\Scripts\\activate
