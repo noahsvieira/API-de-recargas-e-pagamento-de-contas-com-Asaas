@@ -70,10 +70,10 @@ A documentação interativa fica disponível em `http://127.0.0.1:8000/docs`.
 ### Entrando na Página
 ![Endereço da página](docs/demo-enderecoPagina.gif)
 
-### Apresentação da API
+### Backend da API
 ![Backend da API](docs/demo-backendAPI.gif)
 
-### Apresentação da API
+### Frontend da API
 ![Frontend da API](docs/demo-frontendAPI.gif)
 
 ### Criação de Clientes para teste
