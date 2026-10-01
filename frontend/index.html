@@ -69,18 +69,37 @@
     color: var(--text-dim);
     white-space: nowrap;
   }
-  .auth-bar input {
+
+  .key-wrapper {
     flex: 1;
     min-width: 200px;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .key-wrapper input {
+    width: 100%;
     background: var(--bg);
     border: 1px solid var(--border);
     color: var(--text);
     font-family: 'IBM Plex Mono', monospace;
     font-size: 13px;
-    padding: 10px 12px;
+    padding: 10px 42px 10px 12px;
     border-radius: 6px;
   }
-  .auth-bar input:focus { outline: none; border-color: var(--accent); }
+  .key-wrapper input:focus { outline: none; border-color: var(--accent); }
+  .toggle-eye {
+    position: absolute;
+    right: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px 6px;
+    color: var(--text-dim);
+    line-height: 1;
+  }
+  .toggle-eye:hover { color: var(--accent); }
 
   .grid {
     display: grid;
@@ -202,7 +221,10 @@
 
   <div class="auth-bar">
     <label for="apiKey">x-api-key</label>
-    <input id="apiKey" type="text" placeholder="cole aqui a sua MINHA_API_KEY">
+    <div class="key-wrapper">
+      <input id="apiKey" type="password" placeholder="cole aqui a sua MINHA_API_KEY">
+      <button type="button" class="toggle-eye" onclick="alternarVisibilidade()">👁️</button>
+    </div>
   </div>
 
   <div class="grid">
@@ -246,6 +268,18 @@
 
 <script>
 const BASE_URL = "http://127.0.0.1:8000";
+
+function alternarVisibilidade() {
+  const campo = document.getElementById("apiKey");
+  const botao = document.querySelector(".toggle-eye");
+  if (campo.type === "password") {
+    campo.type = "text";
+    botao.textContent = "🙈";
+  } else {
+    campo.type = "password";
+    botao.textContent = "👁️";
+  }
+}
 
 async function chamarApi(caminho, corpo, statusEl, resultEl, btn) {
   const apiKey = document.getElementById("apiKey").value;
