@@ -58,12 +58,12 @@ async def ver_conta(conta_id: str):
 
 
 @app.post("/webhooks/asaas")
-async def webhook(request: Request, asaas_access_token: str = Header(default="")):
+async def webhook(evento: dict, asaas_access_token: str = Header(default="")):
     if asaas_access_token != ASAAS_WEBHOOK_TOKEN:
         raise HTTPException(status_code=401, detail="Token inválido")
 
-    evento = await request.json()
     evento_id = evento.get("id")
+
 
     if evento_id in eventos_processados:      # idempotência
         return {"recebido": True, "duplicado": True}
