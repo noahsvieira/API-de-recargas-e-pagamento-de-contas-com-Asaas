@@ -91,6 +91,9 @@ A documentação interativa fica disponível em `http://127.0.0.1:8000/docs`.
 ### Consulta de status
 ![Consulta de status](docs/demo-consulta-status.gif)
 
+### Consulta de status - GET 
+![Consulta de status -conta_id](docs/demo-consulta-status-conta-id.gif)
+
 ### Webhook (recebendo avisos do Asaas)
 ![Webhook](docs/demo-webhook.gif)
 
